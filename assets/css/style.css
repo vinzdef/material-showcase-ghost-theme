@@ -1,12 +1,52 @@
 /*!
- * Material Showcase
+ * MaterialShowcase
  * 
  * @author Vincent De Feo
- * @version 1.0
+ * @version 1.0.0
  * Copyright Vincent De Feo. GNU GPL V2 licensed.
  */
 
 @charset "UTF-8";
+.frame {
+  margin: 0 auto;
+  max-width: 100%;
+}
+.frame:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+[class*='bit-'] {
+  float: left;
+}
+
+.bit-small {
+  width: 33.33333%;
+}
+
+.bit-medium {
+  width: 50%;
+}
+
+.bit-large {
+  width: 100%;
+}
+
+@media (max-width: 37em) {
+  .bit-small, .bit-medium {
+    width: 100%;
+  }
+}
+@media (min-width: 37em) and (max-width: 68.75em) {
+  .bit-small {
+    width: 50%;
+  }
+
+  .bit-medium {
+    width: 100%;
+  }
+}
 p, ul, ol, dl {
   -webkit-font-feature-settings: 'liga' 1, 'onum' 1, 'kern' 1;
   -moz-font-feature-settings: 'liga' 1, 'onum' 1, 'kern' 1;
