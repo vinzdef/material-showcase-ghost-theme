@@ -1,0 +1,17 @@
+{
+  "name": "Material Showcase",
+  "title": "Material Showcase",
+  "author": "Vincent De Feo",
+  "copyright": "Vincent De Feo",
+  "license": "GNU GPL V2",
+  "version": "1.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ghzmdr/material-showcase-ghost-theme"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-sass": "^0.8.1",
+    "grunt-contrib-watch": "^0.6.1"
+  }
+}

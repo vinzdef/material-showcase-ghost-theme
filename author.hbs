@@ -1,0 +1,50 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+
+{{! The big featured header }}
+
+{{! Everything inside the #author tags pulls data from the author }}
+{{#author}}
+
+{{#if cover}}
+    <header id="main-header" class="shadowed-text" style="background-image: url({{cover}})">
+        <div class="header-shadow"></div>
+{{else}}
+    <header id="main-header">
+{{/if}}
+        <div class="bounding">
+            <div id="main-header-content">
+                <h1 id="page-title">{{name}}</h1>            
+            </div>     
+
+            {{#if image}}
+                <div class="author-image" style="background-image: url({{image}})"></div>   
+            {{/if}}
+        </div>
+    </header>
+
+
+
+{{! The main content area on the homepage }}
+<main id="content" class="bounding" role="main">
+
+<div class="author-info">
+        {{#if bio}}            
+            <div class="author-bio">{{bio}}</div>
+        {{/if}}        
+        
+        {{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
+    
+        {{#if website}}<span class="author-link icon-link"><a href="{{website}}">{{website}}</a></span>{{/if}}
+
+        <span class="author-stats"><i class="icon-stats"></i> {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}</span>
+</div>
+        
+{{/author}}
+
+
+
+
+    {{! The tag below includes the post loop - partials/loop.hbs }}
+    <div class="frame">{{> "loop"}}</div>
+</main>
