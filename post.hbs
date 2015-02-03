@@ -18,7 +18,7 @@
     <div class="bounding">
         <div id="main-header-content">
             <h1 id="page-title">{{title}}</h1>            
-            <h2 id="page-descr">{{date format="DD MMMM YYYY"}}</h2>
+            <h2 id="post-date">{{date format="DD MMMM YYYY"}}</h2>
         </div>     
         <nav id="social-nav">
             <a class="social-link"><i class="fa fa-facebook"></i></a>
@@ -29,7 +29,7 @@
 
 <div class="bounding">
     <article id="main-article">
-        {{content}}
+        <div class="post-content">{{content}}</div>
 
         <section class="tags">
             {{tags prefix='on: '}}

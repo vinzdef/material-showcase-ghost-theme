@@ -45,6 +45,7 @@ module.exports = function (grunt) {
 			dist: {
 				options: {
 					style: 'compressed',
+                    banner: '<%= tag.banner %>'
 				}, 
 				files: {
 					'<%= project.css %>': '<%= project.sass %>'
@@ -58,7 +59,7 @@ module.exports = function (grunt) {
 		watch: {
 			sass: {
 		    	files: '<%= project.sass %>',
-		    	tasks: ['sass:dev']
+		    	tasks: ['sass:dist']
 			},
 	   		
 	   		all: {
@@ -79,7 +80,7 @@ module.exports = function (grunt) {
 
 
 	grunt.registerTask('default', [
-			'sass:dev',//'sass:dist',
+			'sass:dist',
 			'watch'						
 		]);
 };

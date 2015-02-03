@@ -189,3 +189,17 @@ margin on the iframe, cause it breaks stuff. */
 img {
 	max-width: 100%;
 }
+
+html {
+  height: 100%;
+  max-height: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  height: 100%;
+  max-height: 100%;
+  -webkit-font-feature-settings: 'kern' 1;
+  -moz-font-feature-settings: 'kern' 1;
+  -o-font-feature-settings: 'kern' 1;
+}

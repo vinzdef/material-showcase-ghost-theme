@@ -1,5 +1,5 @@
 //MEDIA QUERY BREAKPOINTS 
-$small:             37em; // Portrait mobile to landscape mobile
+$small:             30em; // Portrait mobile to landscape mobile
 $medium:            50em; // Portrait tablet to landscape tablet
 $large:             68.750em; // Small desktop to large desktop
 
@@ -20,7 +20,7 @@ $large:             68.750em; // Small desktop to large desktop
 }
 
 @mixin debug-outline($color) {
-	//border: 2px solid $color;
+	border: 2px solid $color;
 }
 
 @mixin morphing-fab{
@@ -41,6 +41,22 @@ $large:             68.750em; // Small desktop to large desktop
 	background-repeat: no-repeat;
 }
 
+@mixin card{
+	position: relative;
+	background-color: #FAFAFA;
+	margin: 2em;
+	padding: 2em;
+	z-index: 100;
+    border-radius: 3px;
+	@include material-shadow-z-2;
+
+    @media (max-width: $small) {
+      margin: 0;
+      padding: 2em 1.5em;
+      @include material-shadow-z-1;
+    }
+}
+
 a {
 	color: #1A237E;
 	font-weight: bold;
@@ -53,22 +69,10 @@ a {
 	}
 }
 
-html {
-    height: 100%;
-    max-height: 100%;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
 body {
 	background-color: #F2EFE8;
 	color: #3A4145;
-    height: 100%;
-    max-height: 100%;
     font-family: "Roboto", serif;
-    color: #3A4145;
-    -webkit-font-feature-settings: 'kern' 1;
-    -moz-font-feature-settings: 'kern' 1;
-    -o-font-feature-settings: 'kern' 1;
 }
 
 ::-moz-selection {
@@ -81,10 +85,7 @@ body {
 
 .bounding{	
 	width: 80%;
-	min-height: 100%;	
 	margin: 0 auto;
-
-	@include debug-outline(red);
 	
 	@media (min-width: $large){
 		width: 960px;
@@ -94,26 +95,37 @@ body {
 	@media (max-width: $medium){	
 		width: 100%;
 	}
+
+    @include debug-outline(red);
 }
 
+
+//MAIN HEADER FOR ALL THE PAGES
 header#main-header {
+    @include debug-outline(yellow);
 	position: relative;
 	background-color: #3F51B5;
-	min-height: 400px;
 	width: 100%;
+    min-height: 400px;
+
+    @media (max-width: $medium) {
+      min-height: 300px;
+    }
+    @media (max-width: $small) {
+      min-height: 200px;
+    }
 
 	@include respbg;
-
 	@include material-shadow-z-1;
-
-	@include debug-outline(yellow);
 
 	.bounding{
 		position: absolute;
 		bottom: 0;
-		left: 0; right: 0;		
+        height: 100%;
+		left: 0; right: 0;
 	}
 
+    //SHADOW DRAWN WHEN COVER IS PRESENT
 	#main-header-shadow{
 		position: absolute;
 		display: block;
@@ -122,6 +134,7 @@ header#main-header {
 		background-color: rgba(10,10,10,.2);
 	}
 
+    //TEXT SHADOWED WHEN COVER PRESENT
 	&.shadowed-text {
 		#main-header-content, nav#social-nav{
 			text-shadow: 1px 2px 7px rgba(0, 0, 0, 1);
@@ -129,11 +142,25 @@ header#main-header {
 	}
 
 	#main-header-content {
+
 		@include debug-outline(green);
+        //NEEDED ON SMALLER SCREENS
+        //TO AVOID TITLE OVERLAPPING IMAGE
+        margin-right: 80px;
 		position: absolute;		
 		text-align: left;
 		color: white;
-		bottom: 10%;
+		bottom: 1em;
+
+        @media(max-width: $medium){
+          padding-left: 2em;
+          bottom: 20%;
+        }
+
+        @media (max-width: $small) {
+          font-size: 0.7em;
+          bottom: 10%;
+        }
 
 		#page-title {
 			margin: 0;
@@ -141,7 +168,7 @@ header#main-header {
 			font-size: 3em;				
 		}			
 
-		#page-descr {	
+		#page-descr, #post-date {	
 			padding:0;	
 			margin: 0;	
 			font-size: 1.8em;
@@ -167,90 +194,66 @@ header#main-header {
 		@include respbg;
 	}
 
-	nav#social-nav {		
-		position: absolute;	
-		width: auto;
-		right: 0;
-		bottom: 10%;
-		margin-right: 1em;
+	//SOCIAL NAVIGATION
+	nav#social-nav {
+
+        position: absolute;
+        bottom: 0;
+        right: 1em;
 
 		.social-link {
 			color: white;
 			font-size: 1.2em;
 			padding: 0 0.5em;
 		}
-	}		
-}
 
-header#main-header.post-header {
-	#main-header-content{
-		#page-descr{
-			padding-left: 0.3em;
-			font-size: 1.3em;
-		}
+		@include debug-outline(blue);
 	}
 
-	#main-header-content, nav#social-nav{	
-		@media (max-width: $medium){
-			margin-bottom: 3em;
-		}
 
-		@media (min-width: $medium){
-			margin-bottom: 5em;			
-		}
-	}
 }
-
 
 //MAIN CONTENT
 main#content{
 	margin-top: 2em;
 
-	.bit-small {
-		
+	.bit-small {		
 		.article{
-			margin: 1em;
-			margin-bottom: 2em;
-			position: relative;
-			border-radius: 4px;			
-			@include material-shadow-z-2;
-			
-			background-color: white;
-			height: 400px;
+          @include respbg;
+          @include material-shadow-z-2;
 
-			@media (min-width: $small){
-				transition: .4s ease-in-out;
-				&:hover {
-						transform: scale(1.05, 1.05);
-						@include material-shadow-z-3;
-				}
-			}
-			
-			@include respbg;	
-			background-color: #2b2b2b;
-			
-			.article-title {
-				position: absolute;
-				width: 100%;				
-				bottom: 0;
-				margin: 0;
-				text-align: center;
-				background-color: #FAFAFA;
-				font-size: 1.2em;
-				padding: 0.7em 0;
-			}
+          position: relative;
+          margin: 1em 1em 2em;
+          border-radius: 4px;
 
+          background-color: #2b2b2b;
+          height: 400px;
+
+          //ZOOM ARTICLE ON HOVER
+          @media (min-width: $small){
+            transition: .4s ease-in-out;
+            &:hover {
+              transform: scale(1.05, 1.05);
+              @include material-shadow-z-3;
+            }
+          }
+
+          .article-title {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            margin: 0;
+            text-align: center;
+            background-color: #FAFAFA;
+            font-size: 1.1em;
+            padding: 0.7em 0;
+          }
 		}		
 	}
 
 	.author-info {
-		background-color: #FFF;		
-		padding: 2em;		
-		margin: 2em 1em;
-		margin-top: 3em;
-		position: relative;
-		border-radius: 4px;			
-		@include material-shadow-z-2;
+      @include card;
+      margin: 3em 1em 2em;
 			
 		.author-bio{
 			font-size: 1.3em;
@@ -273,38 +276,64 @@ main#content{
 	}
 }
 
-
 //POST ARTICLE
-article#main-article{	
-	position: relative;
-	background-color: #FAFAFA;
-	margin: 2em;
-	padding: 2em;	
-	margin-top: -5em;
-	z-index: 100;
-	@include material-shadow-z-2;
+article#main-article{
+
+  .post-content{
+    font-size: 1.2em;
+  }
+
+	@include card;
+    margin-top: -6em;
 
 	@media (max-width: $medium){
 		margin-top: -4em;
 	}
 
 	@media (max-width: $small){
-		margin-top: -2em;
-		margin: 0;
+		margin-top: 0;
 	}
+
+
+  section.tags{
+    width: 100%;
+    text-align: center;
+  }
+}
+//PUSH CONTENT UP IF ON POST HEADER
+header#main-header.post-header {
+  #main-header-content {
+    bottom: 2em;
+
+    @media (max-width: $small){
+      bottom: 4em;
+    }
+
+    #post-date {
+      margin-top: 0.4em;
+      margin-left: 0.4em;
+      font-size: 1.3em;
+    }
+  }
+  .bounding {
+    bottom: 6em;
+    @media (max-width: $medium){
+      bottom: 4em;
+    }
+
+    @media (max-width: $small){
+      bottom: 0;
+    }
+  }
 }
 
 //POST FOOTER
-footer.post-footer{	
-	position: relative;
-	background-color: #FAFAFA;
-	margin: 3em 2em 2em;
-	padding: 2em;	
-	z-index: 100;
-	@include material-shadow-z-2;
+footer.post-footer{
+    @include card;
+    margin-top: 4em;
 
 	@media (max-width: $small){
-		margin: 2em 0;
+		margin-top: 3em;
 	}
 
 	.author-image {
@@ -324,29 +353,29 @@ footer.post-footer{
 
 	#author-name {
 		font-size: 1.5em;
-		margin-top: 0.3em;		
-
+		margin-top: 0.3em;
 	}
 
 	.author-meta {
 		width: 100%;
 
 		> span {
-			display: inline-block;
-			width: 49%;				
-			&:last-child {
-				text-align: right;
-			}
-		}		
-	}
-}
+          display: inline-block;
+          width: 49%;
+          font-weight: bold;
 
+          &:last-child {
+              text-align: right;
+            }
 
-section.tags {
-	margin-left: 1em;	
-	margin-top: 3em;
-	> a {
-		padding-left: 1em;
+          @media (max-width: $small){
+            display: block;
+            &:last-child {
+              margin-top: 0.3em;
+              text-align: left;
+            }
+          }
+		}
 	}
 }
 
@@ -365,11 +394,15 @@ section.share {
 
 //PAGINATION
 nav.pagination {
-	width: 100%;
 	text-align: center;
 	margin: 2em;
-	.older-posts {
-		content: '→';
+	
+	.newer-posts{
+		font-weight: bold;
+		margin-right: 2em;
+	}
+
+	.older-posts {	
 		font-weight: bold;
 		margin-left: 2em;
 	}
@@ -398,34 +431,3 @@ footer#main-footer {
 	}
 }
 
-
-@media (max-width: $medium){
-
-	header#main-header{
-		min-height: 300px;
-
-		#main-header-content {
-			padding-left: 2em;
-			bottom: 20%;
-		}
-
-		nav#social-nav {
-			bottom: 20%;
-		}
-	}
-}
-
-@media (max-width: $small) {	
-	header#main-header{
-		min-height: 200px;
-
-		#main-header-content {
-			font-size: 0.7em;
-			bottom: 10%;
-		}
-
-		nav#social-nav {
-			bottom: 5%;
-		}
-	}
-}
