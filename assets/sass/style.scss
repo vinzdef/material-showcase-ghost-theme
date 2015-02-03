@@ -304,6 +304,7 @@ article#main-article{
 //PUSH CONTENT UP IF ON POST HEADER
 header#main-header.post-header {
   #main-header-content {
+    bottom: 0;
 
     @media (min-width: $small){
       bottom: 2em;
