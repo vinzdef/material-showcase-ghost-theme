@@ -286,7 +286,6 @@ body {
 .bounding {
   width: 80%;
   margin: 0 auto;
-  border: 2px solid red;
 }
 @media (min-width: 68.75em) {
   .bounding {
@@ -301,7 +300,6 @@ body {
 }
 
 header#main-header {
-  border: 2px solid yellow;
   position: relative;
   background-color: #3F51B5;
   width: 100%;
@@ -339,7 +337,6 @@ header#main-header.shadowed-text #main-header-content, header#main-header.shadow
   text-shadow: 1px 2px 7px black;
 }
 header#main-header #main-header-content {
-  border: 2px solid green;
   position: absolute;
   text-align: left;
   color: white;
@@ -396,7 +393,6 @@ header#main-header nav#social-nav {
   position: absolute;
   bottom: 1em;
   right: 1em;
-  border: 2px solid blue;
 }
 header#main-header nav#social-nav .social-link {
   color: white;
