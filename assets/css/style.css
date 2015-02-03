@@ -358,6 +358,7 @@ header#main-header #main-header-content {
     font-size: 0.7em;
     padding-left: 2em;
     padding-right: 1em;
+    bottom: 4em;
   }
 }
 header#main-header #main-header-content #page-title {
@@ -427,7 +428,7 @@ header#main-header.post-header .bounding {
 }
 
 main#content {
-  margin-top: 2em;
+  margin-top: 1em;
 }
 @media (min-width: 30em) {
   main#content {
