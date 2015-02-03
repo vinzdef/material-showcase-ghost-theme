@@ -426,6 +426,9 @@ header#main-header.post-header .bounding {
   }
 }
 
+main#content {
+  margin-top: 2em;
+}
 @media (min-width: 30em) {
   main#content {
     margin-top: 2em;
