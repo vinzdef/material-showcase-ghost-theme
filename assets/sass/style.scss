@@ -112,8 +112,10 @@ header#main-header {
       height: 300px;
     }
   
-    @media (max-width: $large) and (orientation: landscape){
-      height: 150px;
+    &:not(.post-header) {
+      @media (max-width: $large) and (orientation: landscape) {
+        height: 150px;
+      }
     }
     @media (max-width: $small) {
       height: 200px;
