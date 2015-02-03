@@ -210,13 +210,36 @@ header#main-header {
 
 		@include debug-outline(blue);
 	}
+}
 
+//PUSH CONTENT UP IF ON POST HEADER
+header#main-header.post-header {
 
+  #main-header-content {
+    #post-date {
+      margin-top: 0.4em;
+      margin-left: 0.4em;
+      font-size: 1.3em;
+    }
+  }
+
+  .bounding {
+    bottom: 6em;
+    @media (max-width: $medium){
+      bottom: 4em;
+    }
+    @media (max-width: $small){
+      bottom: 0;
+    }
+  }
 }
 
 //MAIN CONTENT
 main#content{
-	margin-top: 2em;
+
+    @media (min-width: $small){
+      margin-top: 2em;
+    }
 
 	.bit-small {		
 		.article{
@@ -299,32 +322,6 @@ article#main-article{
   section.tags{
     width: 100%;
     text-align: center;
-  }
-}
-//PUSH CONTENT UP IF ON POST HEADER
-header#main-header.post-header {
-  #main-header-content {
-    bottom: 0;
-
-    @media (min-width: $small){
-      bottom: 2em;
-    }
-
-    #post-date {
-      margin-top: 0.4em;
-      margin-left: 0.4em;
-      font-size: 1.3em;
-    }
-  }
-  .bounding {
-    bottom: 6em;
-    @media (max-width: $medium){
-      bottom: 4em;
-    }
-
-    @media (max-width: $small){
-      bottom: 0;
-    }
   }
 }
 
