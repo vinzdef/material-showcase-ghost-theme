@@ -112,7 +112,7 @@ header#main-header {
       height: 300px;
     }
   
-    &:not(.post-header) {
+    &:not(&.post-header) {
       @media (max-width: $large) and (orientation: landscape) {
         height: 150px;
       }

@@ -315,7 +315,7 @@ header#main-header {
   }
 }
 @media (max-width: 68.75em) and (orientation: landscape) {
-  header#main-header {
+  header#main-header:not(&.post-header) {
     height: 150px;
   }
 }
