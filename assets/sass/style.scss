@@ -150,15 +150,17 @@ header#main-header {
 		position: absolute;		
 		text-align: left;
 		color: white;
-		bottom: 1em;
+		bottom: 3em;
 
         @media(min-width: $small) and (max-width: $medium){
+          bottom: 15%;
           padding-left: 2em;
-          bottom: 20%;
         }
 
         @media (max-width: $small) {
           font-size: 0.7em;
+          padding-left: 2em;
+          padding-right: 1em;
         }
 
 		#page-title {

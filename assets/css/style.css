@@ -340,17 +340,19 @@ header#main-header #main-header-content {
   position: absolute;
   text-align: left;
   color: white;
-  bottom: 1em;
+  bottom: 3em;
 }
 @media (min-width: 30em) and (max-width: 50em) {
   header#main-header #main-header-content {
+    bottom: 15%;
     padding-left: 2em;
-    bottom: 20%;
   }
 }
 @media (max-width: 30em) {
   header#main-header #main-header-content {
     font-size: 0.7em;
+    padding-left: 2em;
+    padding-right: 1em;
   }
 }
 header#main-header #main-header-content #page-title {
