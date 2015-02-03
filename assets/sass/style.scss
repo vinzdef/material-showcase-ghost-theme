@@ -152,14 +152,13 @@ header#main-header {
 		color: white;
 		bottom: 1em;
 
-        @media(max-width: $medium){
+        @media(min-width: $small) and (max-width: $medium){
           padding-left: 2em;
           bottom: 20%;
         }
 
         @media (max-width: $small) {
           font-size: 0.7em;
-          bottom: 0%;
         }
 
 		#page-title {

@@ -345,7 +345,7 @@ header#main-header #main-header-content {
   color: white;
   bottom: 1em;
 }
-@media (max-width: 50em) {
+@media (min-width: 30em) and (max-width: 50em) {
   header#main-header #main-header-content {
     padding-left: 2em;
     bottom: 20%;
@@ -354,7 +354,6 @@ header#main-header #main-header-content {
 @media (max-width: 30em) {
   header#main-header #main-header-content {
     font-size: 0.7em;
-    bottom: 0%;
   }
 }
 header#main-header #main-header-content #page-title {
