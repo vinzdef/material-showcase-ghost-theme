@@ -303,7 +303,7 @@ header#main-header {
   position: relative;
   background-color: #3F51B5;
   width: 100%;
-  min-height: 400px;
+  height: 400px;
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
@@ -311,12 +311,17 @@ header#main-header {
 }
 @media (max-width: 50em) {
   header#main-header {
-    min-height: 300px;
+    height: 300px;
+  }
+}
+@media (max-width: 68.75em) and (orientation: landscape) {
+  header#main-header {
+    height: 150px;
   }
 }
 @media (max-width: 30em) {
   header#main-header {
-    min-height: 200px;
+    height: 200px;
   }
 }
 header#main-header .bounding {

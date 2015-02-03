@@ -106,17 +106,17 @@ header#main-header {
 	position: relative;
 	background-color: #3F51B5;
 	width: 100%;
-    min-height: 400px;
+    height: 400px;
 
     @media (max-width: $medium) {
-      min-height: 300px;
+      height: 300px;
     }
   
     @media (max-width: $large) and (orientation: landscape){
       height: 150px;
     }
     @media (max-width: $small) {
-      min-height: 200px;
+      height: 200px;
     }
 
 	@include respbg;
