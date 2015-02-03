@@ -20,7 +20,7 @@ $large:             68.750em; // Small desktop to large desktop
 }
 
 @mixin debug-outline($color) {
-	//border: 2px solid $color;
+	border: 2px solid $color;
 }
 
 @mixin morphing-fab{
