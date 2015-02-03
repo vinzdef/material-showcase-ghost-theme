@@ -144,6 +144,7 @@ header#main-header {
 	#main-header-content {
 
 		@include debug-outline(green);
+
         //NEEDED ON SMALLER SCREENS
         //TO AVOID TITLE OVERLAPPING IMAGE
         margin-right: 80px;
@@ -159,7 +160,7 @@ header#main-header {
 
         @media (max-width: $small) {
           font-size: 0.7em;
-          bottom: 10%;
+          //bottom: 10%;
         }
 
 		#page-title {
@@ -198,7 +199,7 @@ header#main-header {
 	nav#social-nav {
 
         position: absolute;
-        bottom: 0;
+        bottom: 1em;
         right: 1em;
 
 		.social-link {
@@ -306,7 +307,7 @@ header#main-header.post-header {
     bottom: 2em;
 
     @media (max-width: $small){
-      bottom: 4em;
+      bottom: 1em;
     }
 
     #post-date {
