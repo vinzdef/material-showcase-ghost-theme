@@ -59,7 +59,7 @@ module.exports = function (grunt) {
 		watch: {
 			sass: {
 		    	files: '<%= project.sass %>',
-		    	tasks: ['sass:dist']
+		    	tasks: ['sass:dev']
 			},
 	   		
 	   		all: {
@@ -80,7 +80,7 @@ module.exports = function (grunt) {
 
 
 	grunt.registerTask('default', [
-			'sass:dist',
+			'sass:dev',
 			'watch'						
 		]);
 };
