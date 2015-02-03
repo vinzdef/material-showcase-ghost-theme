@@ -340,7 +340,6 @@ header#main-header.shadowed-text #main-header-content, header#main-header.shadow
 }
 header#main-header #main-header-content {
   border: 2px solid green;
-  margin-right: 80px;
   position: absolute;
   text-align: left;
   color: white;
@@ -355,6 +354,7 @@ header#main-header #main-header-content {
 @media (max-width: 30em) {
   header#main-header #main-header-content {
     font-size: 0.7em;
+    bottom: 0%;
   }
 }
 header#main-header #main-header-content #page-title {
