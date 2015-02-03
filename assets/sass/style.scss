@@ -111,6 +111,10 @@ header#main-header {
     @media (max-width: $medium) {
       min-height: 300px;
     }
+  
+    @media (max-width: $large) and (orientation: landscape){
+      height: 150px;
+    }
     @media (max-width: $small) {
       min-height: 200px;
     }
