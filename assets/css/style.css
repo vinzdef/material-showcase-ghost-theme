@@ -259,7 +259,7 @@ body {
 }
 
 a {
-  color: #1A237E;
+  color: #832f0c;
   font-weight: bold;
   text-decoration: none;
   transition: .2s ease-in-out;
@@ -461,6 +461,8 @@ main#content .bit-small .article .article-title {
   bottom: 0;
   margin: 0;
   text-align: center;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
   background-color: #FAFAFA;
   font-size: 1.1em;
   padding: 0.7em 0;
@@ -510,6 +512,7 @@ article#main-article {
 }
 article#main-article .post-content {
   font-size: 1.2em;
+  line-height: 1.5em;
 }
 @media (max-width: 30em) {
   article#main-article {
@@ -607,7 +610,36 @@ section.share {
   text-align: center;
 }
 section.share > a {
-  padding: 2em;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+  font-size: 1.2em;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  margin-right: 3em;
+  display: inline-block;
+  color: #fff;
+  text-align: center;
+  border-radius: 50%;
+}
+section.share > a:hover {
+  box-shadow: 0 12px 17px 0 rgba(0, 0, 0, 0.3), 0 8px 5px 0 rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 30em) {
+  section.share > a {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    margin-right: 1em;
+  }
+}
+section.share > a.facebook {
+  background-color: #3b5998;
+}
+section.share > a.twitter {
+  background-color: #00aced;
+}
+section.share > a.google-plus {
+  background-color: #dd4b39;
 }
 
 nav.pagination {
@@ -625,18 +657,25 @@ nav.pagination .older-posts {
 
 footer#main-footer {
   padding: 2em 0;
-  margin-top: 2em;
+  margin-top: 4em;
   width: 100%;
+  box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.32) inset;
   background-color: #C5C5C5;
-  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.3);
 }
 footer#main-footer #main-footer-content {
   text-align: center;
   font-size: 0.8em;
 }
 footer#main-footer #main-footer-content > span {
-  display: block;
-  margin: .3em;
+  display: inline-block;
+}
+footer#main-footer #main-footer-content > span:after {
+  content: '/';
+  margin: 0 .7em;
+}
+footer#main-footer #main-footer-content > span:last-child:after {
+  content: '';
+  margin: 0;
 }
 footer#main-footer #main-footer-content > span > span {
   color: #262B2E;

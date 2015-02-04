@@ -17,8 +17,8 @@
     {{! Styles'n'Scripts }}
     <link rel="stylesheet" href="/assets/css/normalize.css">
     <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.css">
 
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,700,700italic,300italic|Open+Sans:700,400" />
     <script src="//localhost:35729/livereload.js"></script>
     {{! Ghost outputs important style and meta data with this tag }}
@@ -31,10 +31,9 @@
 
     <footer id="main-footer">
         <div id="main-footer-content" class="bounding">
-            <span>All content copyright <span id="blog-copy">{{@blog.title}}</span> &copy; {{date format="YYYY"}}</span>
-            <span>Design by <span id="design-author">Vincent</span></span>
-            <span>Proudly published with <span id="ghost-link">Ghost</span></span>
-
+            <span>All content copyright <span id="blog-copy"><a href="{{@blog.url}}">{{@blog.title}}</a></span> &copy; {{date format="YYYY"}}</span>
+            <span>Design by <span id="design-author"><a href="http://vincentdefeo.me">Vincent</a></span></span>
+            <span>Proudly published with <span id="ghost-link"><a href="https://ghost.org/">Ghost</a></span></span>
         </div>
     </footer>
 
